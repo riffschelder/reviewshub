@@ -1,3 +1,5 @@
+import os
+
 DEBUG = False
 TEMPLATE_DEBUG = False
 SECRET_KEY = os.environ['REVIEWS_HUB_SECRET_KEY']
