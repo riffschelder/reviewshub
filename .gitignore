@@ -1,5 +1,5 @@
 # local settings
-**/settings/base.py
+**/settings/local.py
 
 ###
 # settings below provided by github
