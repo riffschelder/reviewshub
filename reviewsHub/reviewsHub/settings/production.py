@@ -1,14 +1,14 @@
 DEBUG = False
 TEMPLATE_DEBUG = False
-SECRET_KEY = '$d416i%#@eqim_ms34y42jy%7-+(ml7*7iz8l!w7*7h%et!i3l'
+SECRET_KEY = os.environ['REVIEWS_HUB_SECRET_KEY']
 ALLOWED_HOSTS = ['.schelder.com', '.schelder.com.']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': '',                      
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
+        'NAME': 'reviewshub',                      
+        'USER': 'hub',
+        'PASSWORD': os.environ['REVIEWS_HUB_DB_PASSWD'],
+        'HOST': 'localhost',
         'PORT': '',
     }
 }
