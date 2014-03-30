@@ -1,6 +1,6 @@
 import os
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = False
 SECRET_KEY = os.getenv('REVIEWS_HUB_SECRET_KEY')
 ALLOWED_HOSTS = []
