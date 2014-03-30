@@ -1,7 +1,7 @@
 import os
 
 DEBUG = True
-TEMPLATE_DEBUG = False
+TEMPLATE_DEBUG = True
 SECRET_KEY = os.getenv('REVIEWS_HUB_SECRET_KEY')
 ALLOWED_HOSTS = []
 DATABASES = {
