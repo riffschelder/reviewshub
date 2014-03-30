@@ -11,4 +11,8 @@ import os
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "reviewsHub.settings")
 
 from django.core.wsgi import get_wsgi_application
-application = get_wsgi_application()
+_application = get_wsgi_application()
+
+for key in environ:
+    if key.startswith('REVIEWS_HUB_'):
+        os.environ[key] = environ[key]
