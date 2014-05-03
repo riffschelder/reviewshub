@@ -10,4 +10,4 @@ class ReviewInfo(models.Model):
     reviewer = models.CharField(max_length = 200)
 
     def __unicode__(self):
-        return self.title
+        return str(self.sku) + ": " + self.title
