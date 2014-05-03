@@ -8,3 +8,6 @@ class ReviewInfo(models.Model):
     comment = models.TextField()
     submissionTime = models.DateTimeField()
     reviewer = models.CharField(max_length = 200)
+
+    def __unicode__(self):
+        return self.title
