@@ -20,16 +20,23 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 # Application definition
 
 INSTALLED_APPS = (
+    # django
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'homepage',
+
+    # third-party
     'south',
-    'reviewInfo',
     'django_extensions',
+    'haystack',
+
+    # ours
+    'homepage',
+    'reviewInfo',
+    
 )
 
 MIDDLEWARE_CLASSES = (
@@ -64,3 +71,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+        'PATH': os.path.join(BASE_DIR, 'whoosh_index'),
+    },
+}
