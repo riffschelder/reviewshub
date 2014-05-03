@@ -29,6 +29,7 @@ INSTALLED_APPS = (
     'homepage',
     'south',
     'reviewInfo',
+    'django_extensions',
 )
 
 MIDDLEWARE_CLASSES = (
