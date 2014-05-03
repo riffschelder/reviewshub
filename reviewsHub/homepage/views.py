@@ -2,5 +2,5 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def index(request):
-    return HttpResponse("Best Hub for Amazon Reviews.")
+    return HttpResponse("Best Hub for Best Buy Reviews.")
 
