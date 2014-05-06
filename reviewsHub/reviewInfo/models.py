@@ -10,6 +10,16 @@ def product_name(sku):
     else:
         return '???'
 
+def sku_number(product_name):
+    if 'xbox' in product_name.lower():
+        return 9008182
+    elif 'macbook' in product_name.lower():
+        return 6238297
+    elif 'galaxy' in product_name.lower():
+        return 5717547
+    else:
+        return product_name
+
 class ReviewInfo(models.Model):
     sku = models.IntegerField()
     rating = models.FloatField()

@@ -21,9 +21,8 @@
     {% load highlight %}
 
     {% for result in results %}
-    <p><strong>{{ result.object.title }}</strong><br>
-    {% highlight result.object.comment with query max_length 10000 %}
-    <!-- {{ result.object.comment }} -->
+    <p class="review"><strong>{{ result.object.title }}</strong><br>
+    {% highlight result.object.comment with query %}
     </p>
     {% endfor %}
 

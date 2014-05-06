@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from haystack.query import SearchQuerySet
 
-from reviewInfo.models import product_name
+from reviewInfo.models import product_name, sku_number
 
 from haystack.utils import Highlighter
 from django.utils.html import strip_tags
@@ -17,6 +17,8 @@ class NoCropHighlighter(Highlighter):
 def search(request):
     sku = request.GET.get('sku')
     query = request.GET.get('q')
+
+    sku = sku_number(sku)    
 
     product = None
     if sku:
