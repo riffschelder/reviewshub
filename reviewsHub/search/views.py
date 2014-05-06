@@ -18,9 +18,11 @@ def search(request):
     sku = request.GET.get('sku')
     query = request.GET.get('q')
 
-    product = product_name(int(sku))
-    if product == '???':
-        product = None
+    product = None
+    if sku:
+        product = product_name(int(sku))
+        if product == '???':
+            product = None
 
     results = SearchQuerySet().filter(text=query)
     if sku:
