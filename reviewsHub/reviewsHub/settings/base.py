@@ -36,6 +36,7 @@ INSTALLED_APPS = (
     # ours
     'homepage',
     'reviewInfo',
+    'search',
     
 )
 
@@ -78,3 +79,5 @@ HAYSTACK_CONNECTIONS = {
         'PATH': os.path.join(BASE_DIR, 'whoosh_index'),
     },
 }
+
+HAYSTACK_CUSTOM_HIGHLIGHTER = 'search.views.NoCropHighlighter'
