@@ -15,19 +15,22 @@ class NoCropHighlighter(Highlighter):
         return self.render_html(highlight_locations, start_offset, end_offset)
 
 def search(request):
-    sku = request.GET.get('sku')
+    product_sku_or_name = request.GET.get('sku')
     query = request.GET.get('q')
 
-    sku = sku_number(sku)    
+    # is it a number?
+    if product_sku_or_name.isdigit():
+        sku = int(product_sku_or_name)
+    # otherwise, is it a name?
+    else:
+        sku = sku_number(product_sku_or_name)
 
-    product = None
-    if sku:
-        product = product_name(int(sku))
-        if product == '???':
-            product = None
+    product = product_name(sku)
+    if product == '???':
+        product = None
 
     results = SearchQuerySet().filter(text=query)
-    if sku:
+    if product:
         results = results.filter(sku=sku)
 
     return render(request, 'search/search.html', 

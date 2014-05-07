@@ -18,7 +18,7 @@ def sku_number(product_name):
     elif 'galaxy' in product_name.lower():
         return 5717547
     else:
-        return product_name
+        return -1
 
 class ReviewInfo(models.Model):
     sku = models.IntegerField()
