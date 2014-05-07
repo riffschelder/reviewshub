@@ -26,8 +26,12 @@ def compare_visualization(product_sku, compare_phrase):
         count += 1.0
         print count/len(all_reviews), '\r'
 
-    g = g.split()[0] # Largest subgraph.
-    for n in g.sorted()[:80]: # Sort by Node.weight.
-        n.fill = (0, 0.5, 1, 0.75 * n.weight)
+    if len(g) > 0: 
+        g = g.split()[0] # Largest subgraph.
+        for n in g.sorted()[:80]: # Sort by Node.weight.
+            n.fill = (0, 0.5, 1, 0.75 * n.weight)
 
-    g.export('static/compare_visualization', directed=True, weighted=2.0)
+        g.export('static/compare_visualization', directed=True, weighted=2.0)
+        return True
+    else: 
+        return False
