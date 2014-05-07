@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+{% load sum_long%}
 <html>
 <head>
     <meta charset="utf-8">
@@ -23,6 +23,10 @@
     {% for result in results %}
     <p class="review"><strong>{{ result.object.title }}</strong><br>
     {% highlight result.object.comment with query %}
+    {% if result.object.comment|length > 300 %}
+    <p>[Summarizer] {{ result.object.comment | sum_long}}
+</p>
+            {% endif %}    
     </p>
     {% endfor %}
 
