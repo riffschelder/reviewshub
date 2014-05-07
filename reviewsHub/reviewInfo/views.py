@@ -20,7 +20,9 @@ def visualize(request):
         product = None
 
     if product:
-        compare_visualization(sku, compare_phrase)
-        return redirect('/static/compare_visualization/index.html')
+        if compare_visualization(sku, compare_phrase):
+            return redirect('/static/compare_visualization/index.html')
+        else:
+            return redirect('/static/not_found.html')
     else:
         return redirect('/')
