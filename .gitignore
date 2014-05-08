@@ -1,3 +1,7 @@
+# DS_Store
+.DS_Store
+
+# generated search index
 reviewsHub/whoosh_index/
 
 # local settings
