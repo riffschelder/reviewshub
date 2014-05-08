@@ -1,20 +1,69 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html lang="en">
+  <head>
     <meta charset="utf-8">
     <title>Reviews Hub</title>
-</head>
-<body>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="http://bootswatch.com/darkly/bootstrap.css" rel="stylesheet"> -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        footer{
+            font-weight: normal;
+            position: fixed;
+            height: 50px;
+            bottom: 0;
+            left: 0px;
+            z-index: 10000;
+            padding: 10px 0 0 50px;
+            font-size: 20px;
+            width: 100%;
+            background-color: #303030; 
+            color: #FFF;
+        } 
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align:center;">ReviewsHub</h1>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
     <form method="GET" action="/search">
-        <input type="text" name="q" placeholder="features...">
-        <input type="text" name="sku" placeholder="sku">
-        <input type="submit" value="Search">
+        <div style="text-align:center;">
+            <h3 style="color: #96f3d4;">Rankr</h3>
+            <!-- <label class="control-label" for="inputDefault">Default input</label> -->
+            <!-- <input type="text" class="form-control" id="inputDefault"> -->
+            <input type="text" style="display:inline;" name="q" placeholder="features...">
+            <input type="text" style="display:inline;" name="sku" placeholder="product name or number">
+            <input type="submit" value="Search">
+        </div>
+        
     </form>   
 
     <form method="GET" action="/visualize" target="_blank">
-        <input type="text" name="p" placeholder="comparison phrase">
-        <input type="text" name="sku" placeholder="sku">
-        <input type="submit" value="Search">
-    </form>  
-</body>
+        <div style="text-align:center;">
+            <h3 style="color:#ff99cc;">Visualizr</h3>
+            <input type="text" name="p" placeholder="comparison phrase">
+            <input type="text" name="sku" placeholder="product name or number">
+            <input type="submit" value="Search">
+        </div>
+    </form> 
+    <footer>
+        2014 &copy; ReviewsHub &nbsp;
+    </footer> 
+
+  </body>
 </html>

@@ -12,6 +12,7 @@
 </head>
 <body>
 <h2>Search Results</h2>
+<a href="/">Back to Front Page</a>
 
 {% if query %}
     <p><strong>You searched:</strong> {{ query }} 
@@ -24,9 +25,8 @@
     <p class="review"><strong>{{ result.object.title }}</strong><br>
     {% highlight result.object.comment with query %}
     {% if result.object.comment|length > 1500 %}
-    <p style="color:#0000FF">[Summarizer] {{ result.object.comment | sum_long}} 
-</p>
-            {% endif %}    
+        <span style="color:#0000FF">[Summarizer] {{ result.object.comment | sum_long}} </span>
+    {% endif %}    
     </p>
     {% endfor %}
 
