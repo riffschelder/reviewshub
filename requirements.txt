@@ -8,3 +8,4 @@ django-haystack==2.1.0
 Pattern==2.6
 nltk==2.0.4
 numpy==1.8.1
+
