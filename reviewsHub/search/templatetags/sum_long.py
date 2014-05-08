@@ -8,5 +8,5 @@ register = template.Library()
 @register.filter
 def sum_long (long_input):
     Simple = SimpleSummarizer()
-    return Simple.summarize(long_input, 2)
+    return Simple.summarize(long_input, 4)
 
