@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from reviewInfo.scripts.visualization import compare_visualization
-
+#from reviewInfo.scripts.summarize import SimpleSummarizer
 from reviewInfo.models import product_name, sku_number
 
 # Create your views here.
@@ -26,3 +26,4 @@ def visualize(request):
             return redirect('/static/not_found.html')
     else:
         return redirect('/')
+
