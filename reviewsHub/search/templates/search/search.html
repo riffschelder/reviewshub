@@ -25,7 +25,7 @@
     <p class="review"><strong>{{ result.object.title }}</strong><br>
     {% highlight result.object.comment with query %}
     {% if result.object.comment|length > 1500 %}
-        <span style="color:#0000FF">[Summarizer] {{ result.object.comment | sum_long}} </span>
+        <p style="color:#0000FF">[Summarizer] {{ result.object.comment | sum_long}} </p>
     {% endif %}    
     </p>
     {% endfor %}
