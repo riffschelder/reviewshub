@@ -4,11 +4,25 @@
 <head>
     <meta charset="utf-8">
     <title>Search Results</title>
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
     <style>
     .highlighted {
         background-color: yellow;
     }
+    .search-result{
+        width: 70%;
+    }
+    body {
+        background-color: white;
+        color: black;
+    }
     </style>
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 <h2>Search Results</h2>
@@ -21,6 +35,7 @@
 
     {% load highlight %}
 
+    <div class="search-result">
     {% for result in results %}
     <p class="review"><strong>{{ result.object.title }}</strong><br>
     {% highlight result.object.comment with query %}
@@ -29,9 +44,11 @@
     {% endif %}    
     </p>
     {% endfor %}
+    </div>
 
 {% else %}
     You didn't search for anything...
 {% endif %}
+
 </body>
 </html>
